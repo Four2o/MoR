@@ -405,6 +405,17 @@ footer {
     color: var(--color-text);
 }
 
+.form-group label input[type="checkbox"] {
+    margin-right: var(--spacing-xs);
+}
+
+.field-help {
+    display: block;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
 .form-group input[type="text"],
 .form-group input[type="date"],
 .form-group select,

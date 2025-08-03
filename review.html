@@ -47,6 +47,43 @@
                         </select>
                     </div>
 
+                    <!-- Dynamic Secondary Dropdown -->
+                    <div class="form-group" id="serviceSpecificDropdown" style="display: none;">
+                        <label for="specificService">Select Specific Service</label>
+                        <select id="specificService" name="specificService">
+                            <option value="">Please select...</option>
+                        </select>
+                    </div>
+
+                    <!-- Individual Review Fields -->
+                    <div class="form-group" id="individualReviewSection" style="display: none;">
+                        <label>
+                            <input type="checkbox" id="isIndividualReview" name="isIndividualReview">
+                            Review a specific individual
+                        </label>
+                        
+                        <div id="individualFields" style="display: none; margin-top: var(--spacing-md);">
+                            <div class="form-group">
+                                <label for="individualName">Name of Individual</label>
+                                <input type="text" id="individualName" name="individualName" 
+                                       placeholder="Full name of the person">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="identificationNumber">Identification Number</label>
+                                <input type="text" id="identificationNumber" name="identificationNumber" 
+                                       placeholder="Badge/Warrant/Employee number">
+                                <small class="field-help">This helps ensure accuracy of the review</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title/Role</label>
+                                <input type="text" id="jobTitle" name="jobTitle" 
+                                       placeholder="e.g., Police Officer, Doctor, MP">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="location">Location</label>
                         <input type="text" id="location" name="location" 
