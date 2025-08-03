@@ -1,0 +1,55 @@
+name: Feature Implementation
+description: Template for new feature implementation tasks
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Implementation Template
+        Please provide the details for this feature implementation task.
+  
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Development Phase
+      options:
+        - Phase 1 - Core Foundation
+        - Phase 2 - Review System
+        - Phase 3 - User System
+        - Phase 4 - Evidence and Documentation
+        - Phase 5 - Public Service Database
+        - Phase 6 - Analytics and Transparency
+        - Phase 7 - Community Features
+        - Phase 8 - Quality and Security
+        - Phase 9 - API and Integration
+        - Phase 10 - Launch Preparation
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Detailed description of what needs to be implemented
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: List the requirements that must be met for this feature to be considered complete
+      value: |
+        - [ ] Requirement 1
+        - [ ] Requirement 2
+        - [ ] Tests implemented
+        - [ ] Documentation updated
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical
+    attributes:
+      label: Technical Notes
+      description: Any technical considerations or implementation details
