@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Review - Ministry Of Review</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="nav-brand">
+                    <h1>Ministry Of Review</h1>
+                    <p>Holding public service to public account.</p>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="review.html" class="active">Submit Review</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="review-form-section">
+                <h2>Submit Your Review</h2>
+                <p class="lead">Help improve public services by sharing your experience</p>
+                
+                <form id="reviewForm" class="review-form">
+                    <div class="form-group">
+                        <label for="serviceType">Service Type</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Select a service type...</option>
+                            <option value="police">Police Services</option>
+                            <option value="healthcare">Healthcare Services</option>
+                            <option value="council">Local Council</option>
+                            <option value="education">Education</option>
+                            <option value="transport">Public Transport</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" 
+                               placeholder="City or postcode" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceDate">Date of Service</label>
+                        <input type="date" id="serviceDate" name="serviceDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="rating-container">
+                            <div class="rating" id="ratingStars">
+                                <input type="radio" id="star10" name="rating" value="10">
+                                <label for="star10">10</label>
+                                <input type="radio" id="star9" name="rating" value="9">
+                                <label for="star9">9</label>
+                                <input type="radio" id="star8" name="rating" value="8">
+                                <label for="star8">8</label>
+                                <input type="radio" id="star7" name="rating" value="7">
+                                <label for="star7">7</label>
+                                <input type="radio" id="star6" name="rating" value="6">
+                                <label for="star6">6</label>
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5">5</label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4">4</label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3">3</label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2">2</label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1">1</label>
+                            </div>
+                            <span class="rating-text">Select a rating from 1-10</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewTitle">Review Title</label>
+                        <input type="text" id="reviewTitle" name="reviewTitle" 
+                               placeholder="Summarize your experience" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" name="reviewText" rows="6" 
+                                placeholder="Describe your experience in detail" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="evidence">Supporting Evidence</label>
+                        <div class="file-upload">
+                            <input type="file" id="evidence" name="evidence" 
+                                   multiple accept="image/*,.pdf,.doc,.docx">
+                            <p class="file-help">Upload images or documents (optional)</p>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Version: <span id="version">1.0.0</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

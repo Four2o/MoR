@@ -1,5 +1,38 @@
 console.log('Welcome to The Review Commission!');
 
+// Review Form Handling
+document.addEventListener('DOMContentLoaded', () => {
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', handleReviewSubmission);
+    }
+});
+
+function handleReviewSubmission(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(e.target);
+    const reviewData = {
+        serviceType: formData.get('serviceType'),
+        location: formData.get('location'),
+        serviceDate: formData.get('serviceDate'),
+        rating: formData.get('rating'),
+        title: formData.get('reviewTitle'),
+        text: formData.get('reviewText'),
+        evidence: Array.from(formData.getAll('evidence')).map(file => file.name)
+    };
+
+    // For now, just log the data
+    console.log('Review submitted:', reviewData);
+    
+    // Show success message
+    alert('Thank you for your review! Once we implement backend storage, this will be saved.');
+    
+    // Reset form
+    e.target.reset();
+}
+
 // Mobile Navigation
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
