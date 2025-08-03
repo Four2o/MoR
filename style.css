@@ -55,23 +55,89 @@ body {
     padding: 0 var(--spacing-md);
 }
 
-/* Header */
+/* Header and Navigation */
 header {
     background-color: var(--color-primary);
     color: var(--color-surface);
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-sm);
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-header p {
-    font-size: 1.2rem;
+.nav-brand {
+    flex: 1;
+}
+
+.nav-brand h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.nav-brand p {
+    font-size: 1rem;
     opacity: 0.9;
+    margin-top: var(--spacing-xs);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-surface);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: var(--color-surface);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--color-surface);
+    left: 0;
+}
+
+.hamburger::before { top: -6px; }
+.hamburger::after { bottom: -6px; }
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: var(--spacing-md);
+}
+
+.nav-menu a {
+    color: var(--color-surface);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: var(--color-secondary);
 }
 
 /* Main Content */
@@ -105,12 +171,37 @@ footer {
         padding: var(--spacing-md) 0;
     }
 
-    header h1 {
-        font-size: 2rem;
+    .nav-brand h1 {
+        font-size: 1.5rem;
     }
 
     .container {
         padding: 0 var(--spacing-sm);
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        margin-top: var(--spacing-md);
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: var(--spacing-md);
+        text-align: center;
     }
 }
 

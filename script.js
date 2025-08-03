@@ -1,5 +1,20 @@
 console.log('Welcome to The Review Commission!');
 
+// Mobile Navigation
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+    }
+});
+
 // Version tracking
 let currentVersion = localStorage.getItem('siteVersion') || '1.0.0';
 
